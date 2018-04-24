@@ -1,3 +1,51 @@
-<!doctype html><html ng-app=sadybakasovApp><head><meta charset=utf-8><title>Alymbek Sadybakasov</title><meta name=description content=""><meta name=viewport content="width=device-width"><base href=/about><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor-76cffb0a6f.css><link rel=stylesheet href=styles/app-2ff99d0e38.css></head><body><!--[if lt IE 10]>
+<!doctype html>
+<html ng-app="sadybakasovApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Alymbek Sadybakasov</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <base href="/about">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/dist/css/vendor.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]--><div><navbar></navbar><div ng-view></div></div><script src=scripts/vendor-0b0a6fcc32.js></script><script src=scripts/app-c7af987991.js></script></body></html>
+    <![endif]-->
+
+    <div>
+      <navbar></navbar>
+      <div ng-view></div>
+    </div>
+
+    <!-- build:js(src) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- run `gulp inject` to automatically populate bower script dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+    <!-- inject:js -->
+    <script src="/dist/js/app.js"></script>
+    <script src="/dist/js/vendor.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+  </body>
+</html>
