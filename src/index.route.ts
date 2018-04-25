@@ -15,6 +15,5 @@ module CompanyManagerApp {
       .otherwise({
         redirectTo: '/home'
       });
-       $locationProvider.html5Mode(true);
   }
 }

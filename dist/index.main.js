@@ -1,7 +1,7 @@
 /// <reference path="../../typings/main.d.ts" />
 var CompanyManagerApp;
 (function (CompanyManagerApp) {
-    var app = angular.module('personalApp', ['ngRoute', 'ngSanitize'])
+    var app = angular.module('personalApp', ['ngRoute'])
         .controller('mainController', CompanyManagerApp.MainController)
         .controller('aboutController', CompanyManagerApp.AboutController)
         .config(CompanyManagerApp.routerConfig);
