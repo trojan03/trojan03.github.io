@@ -7,4 +7,4 @@ var CompanyManagerApp;
     }());
     CompanyManagerApp.AboutController = AboutController;
 })(CompanyManagerApp || (CompanyManagerApp = {}));
-//# sourceMappingURL=AboutController.js.map
+//# sourceMappingURL=aboutController.js.map

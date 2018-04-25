@@ -16,7 +16,6 @@ var CompanyManagerApp;
             .otherwise({
             redirectTo: '/home'
         });
-        $locationProvider.html5Mode(true);
     }
     CompanyManagerApp.routerConfig = routerConfig;
 })(CompanyManagerApp || (CompanyManagerApp = {}));
