@@ -15,7 +15,7 @@ var CompanyManagerApp;
     var NavbarController = /** @class */ (function () {
         function NavbarController($location) {
             this.$location = $location;
-            this.tab = "home";
+            this.tab = "about";
         }
         NavbarController.prototype.switchTab = function (name) {
             this.tab = name;

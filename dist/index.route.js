@@ -14,7 +14,7 @@ var CompanyManagerApp;
             controllerAs: 'controller'
         })
             .otherwise({
-            redirectTo: '/home'
+            redirectTo: '/about'
         });
     }
     CompanyManagerApp.routerConfig = routerConfig;

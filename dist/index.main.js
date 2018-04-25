@@ -7,7 +7,7 @@ var CompanyManagerApp;
         .config(CompanyManagerApp.routerConfig);
     app.directive("vNavbar", CompanyManagerApp.vNavbar);
     app.run(['$location', function ($location) {
-            $location.path('/home');
+            $location.path('/about');
         }]);
 })(CompanyManagerApp || (CompanyManagerApp = {}));
 //# sourceMappingURL=index.main.js.map
