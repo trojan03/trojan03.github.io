@@ -1,13 +1,11 @@
 /// <reference path="../../typings/main.d.ts" />
-var CompanyManagerApp;
-(function (CompanyManagerApp) {
+var App;
+(function (App) {
     var app = angular.module('personalApp', ['ngRoute'])
-        .controller('mainController', CompanyManagerApp.MainController)
-        .controller('aboutController', CompanyManagerApp.AboutController)
-        .config(CompanyManagerApp.routerConfig);
-    app.directive("vNavbar", CompanyManagerApp.vNavbar);
-    app.run(['$location', function ($location) {
-            $location.path('/about');
-        }]);
-})(CompanyManagerApp || (CompanyManagerApp = {}));
+        .controller('mainController', App.MainController)
+        .controller('aboutController', App.AboutController)
+        .controller('blogController', App.BlogController)
+        .config(App.routerConfig);
+    app.directive("vNavbar", App.vNavbar);
+})(App || (App = {}));
 //# sourceMappingURL=index.main.js.map
