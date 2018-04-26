@@ -1,6 +1,6 @@
 /** @ngInject */
-var CompanyManagerApp;
-(function (CompanyManagerApp) {
+var App;
+(function (App) {
     function vNavbar() {
         return {
             restrict: 'E',
@@ -10,22 +10,24 @@ var CompanyManagerApp;
             bindToController: true
         };
     }
-    CompanyManagerApp.vNavbar = vNavbar;
+    App.vNavbar = vNavbar;
     /** @ngInject */
     var NavbarController = /** @class */ (function () {
         function NavbarController($location) {
             this.$location = $location;
-            this.tab = "about";
+            this.tab = $location.path().replace("/", "");
         }
         NavbarController.prototype.switchTab = function (name) {
             this.tab = name;
             if (name === "about")
                 this.$location.path("about");
+            else if (name === "blog")
+                this.$location.path("blog");
             else
-                this.$location.path("home");
+                this.$location.path("stuff");
         };
         return NavbarController;
     }());
-    CompanyManagerApp.NavbarController = NavbarController;
-})(CompanyManagerApp || (CompanyManagerApp = {}));
-//# sourceMappingURL=navbar.js.map
+    App.NavbarController = NavbarController;
+})(App || (App = {}));
+//# sourceMappingURL=navbarController.js.map

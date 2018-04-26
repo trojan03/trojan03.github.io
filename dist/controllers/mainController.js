@@ -1,10 +1,10 @@
-var CompanyManagerApp;
-(function (CompanyManagerApp) {
+var App;
+(function (App) {
     var MainController = /** @class */ (function () {
         function MainController() {
         }
         return MainController;
     }());
-    CompanyManagerApp.MainController = MainController;
-})(CompanyManagerApp || (CompanyManagerApp = {}));
+    App.MainController = MainController;
+})(App || (App = {}));
 //# sourceMappingURL=mainController.js.map

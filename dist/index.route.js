@@ -1,22 +1,22 @@
 /** @ngInject */
-var CompanyManagerApp;
-(function (CompanyManagerApp) {
+var App;
+(function (App) {
     function routerConfig($routeProvider, $locationProvider) {
         $routeProvider
             .when('/about', {
             templateUrl: 'dist/views/aboutview.html',
-            controller: CompanyManagerApp.AboutController,
+            controller: App.AboutController,
             controllerAs: 'aboutController'
         })
-            .when('/home', {
+            .when('/stuff', {
             templateUrl: 'dist/views/mainview.html',
-            controller: CompanyManagerApp.MainController,
+            controller: App.MainController,
             controllerAs: 'controller'
         })
             .otherwise({
             redirectTo: '/about'
         });
     }
-    CompanyManagerApp.routerConfig = routerConfig;
-})(CompanyManagerApp || (CompanyManagerApp = {}));
+    App.routerConfig = routerConfig;
+})(App || (App = {}));
 //# sourceMappingURL=index.route.js.map

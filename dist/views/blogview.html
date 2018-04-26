@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <div class="row" style="height: 100px"></div>
+  <div class="row mb-5">
+    <div class="col-4 mb-5 blog-post p-5" ng-repeat="post in blogController.posts">
+      <div class="row">
+        {{post.title}} {{post.created}}
+      </div>
+      <div class="row">
+        {{post.content}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .blog-post:hover {
+    background: lightgrey;
+    cursor: pointer;
+  }
+</style>
