@@ -5,9 +5,9 @@ var App;
             var _this = this;
             this.$location = $location;
             this.id = $routeParams.id;
-            this.hostUrl = "http://trojan03.github.com/";
+            this.hostUrl = "https://trojan03.github.com/";
             $http.get(this.hostUrl + "dist/posts/" + this.id + ".md").then(function (result) {
-                _this.content = _this.hostUrl + "dist/posts/" + _this.id + ".md";
+                _this.content = _this.hostUrl + "dist/posts/" + _this.id + ".md/";
             });
         }
         BlogPostController.prototype.toContent = function () {
