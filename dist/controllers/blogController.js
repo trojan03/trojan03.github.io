@@ -15,8 +15,8 @@ var App;
             var _this = this;
             this.$location = $location;
             this.posts = new Array();
-            this.hostUrl = "https://trojan03.github.io/";
-            $http.get("dist/posts/posts.json/").then(function (result) {
+            var url = "dist/posts/posts.json";
+            $http.get(url).then(function (result) {
                 result.data.forEach(function (post) {
                     _this.posts.push(new BlogPost(post.id, post.title, post.summary, post.date));
                 });
