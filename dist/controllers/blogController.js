@@ -24,7 +24,6 @@ var App;
         }
         BlogController.prototype.openPost = function (postId) {
             this.$location.path("blog/" + postId);
-            document.title = "post1" + " - Alymbek Sadybakasov";
         };
         return BlogController;
     }());
