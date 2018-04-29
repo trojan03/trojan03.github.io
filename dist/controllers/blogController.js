@@ -1,12 +1,31 @@
 var App;
 (function (App) {
+    var BlogPost = /** @class */ (function () {
+        function BlogPost(id, title, summary, date) {
+            this.id = id;
+            this.title = title;
+            this.summary = summary;
+            this.date = date;
+        }
+        return BlogPost;
+    }());
+    App.BlogPost = BlogPost;
     var BlogController = /** @class */ (function () {
-        function BlogController($http) {
+        function BlogController($http, $location) {
             var _this = this;
-            $http.get("http://127.0.0.1:8080/blogposts.json").then(function (result) {
-                _this.posts = result.data;
+            this.$location = $location;
+            this.posts = new Array();
+            this.hostUrl = "http://trojan03.github.com/";
+            $http.get(this.hostUrl + "dist/posts/posts.json").then(function (result) {
+                result.data.forEach(function (post) {
+                    _this.posts.push(new BlogPost(post.id, post.title, post.summary, post.date));
+                });
             });
         }
+        BlogController.prototype.openPost = function (postId) {
+            this.$location.path("blog/" + postId);
+            document.title = "post1" + " - Alymbek Sadybakasov";
+        };
         return BlogController;
     }());
     App.BlogController = BlogController;

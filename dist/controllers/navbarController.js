@@ -15,7 +15,12 @@ var App;
     var NavbarController = /** @class */ (function () {
         function NavbarController($location) {
             this.$location = $location;
-            this.tab = $location.path().replace("/", "");
+            if ($location.path().indexOf("blog") >= 0) {
+                this.tab = "blog";
+            }
+            else {
+                this.tab = $location.path().replace("/", "");
+            }
         }
         NavbarController.prototype.switchTab = function (name) {
             this.tab = name;
