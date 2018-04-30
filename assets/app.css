@@ -14,6 +14,13 @@ html, body {
 .fade.ng-leave { transition:0s linear all; opacity:1; }
 .fade.ng-leave.ng-leave-active { opacity:0; }
 
+.fade-link{
+  transition:0.2s linear all; opacity:1;
+}
+.fade-link:hover {
+  transition:0.2s linear all; opacity:1;
+}
+
 
 /*Blog*/
 .blog-post:hover {
