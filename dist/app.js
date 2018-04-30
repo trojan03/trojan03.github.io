@@ -29,6 +29,7 @@ var App;
                 result.data.forEach(function (post) {
                     _this.posts.push(new BlogPost(post.id, post.title, post.summary, post.date));
                 });
+                _this.posts = _this.posts.slice().reverse();
             });
         }
         BlogController.prototype.openPost = function (postId) {
