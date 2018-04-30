@@ -23,7 +23,7 @@ var App;
             });
         }
         BlogController.prototype.openPost = function (postId) {
-            this.$location.path("blog/" + postId);
+            return "#!/blog/" + postId;
         };
         return BlogController;
     }());

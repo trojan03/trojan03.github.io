@@ -1,8 +1,10 @@
 <div class="container text-left">
   <div class="row" style="height: 100px"></div>
   <div class="row mb-5">
-    <div class="col-4 mb-5 blog-post p-5" ng-repeat="post in blogController.posts" ng-click="blogController.openPost(post.id)">
-      <div class="row font-weight-bold">
+    <a class="col-4 blog-post-link" ng-href="{{blogController.openPost(post.id)}}" ng-repeat="post in blogController.posts">
+    <div class=" mb-5 blog-post p-4" style="border-bottom: 1px solid #17a2b8">
+
+      <div class="row font-weight-bold text-info">
         {{post.title}}
       </div>
       <div class="row">
@@ -12,12 +14,6 @@
         {{post.date}}
       </div>
     </div>
+    </a>
   </div>
 </div>
-
-<style>
-  .blog-post:hover {
-    background: lightgrey;
-    cursor: pointer;
-  }
-</style>

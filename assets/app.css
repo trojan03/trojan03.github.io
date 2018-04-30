@@ -5,6 +5,7 @@ html, body {
     padding: 0px;
 }
 
+/*General*/
 .fade{
   opacity: 1;
 }
@@ -12,3 +13,20 @@ html, body {
 .fade.ng-enter.ng-enter-active { opacity:1; }
 .fade.ng-leave { transition:0s linear all; opacity:1; }
 .fade.ng-leave.ng-leave-active { opacity:0; }
+
+
+/*Blog*/
+.blog-post:hover {
+  background: lightgrey;
+  cursor: pointer;
+}
+.blog-post-link {
+  color: black;
+}
+.blog-post-link:hover{
+  text-decoration: none;
+  color: black;
+}
+code {
+  color: red !important
+}
