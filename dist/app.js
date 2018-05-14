@@ -41,28 +41,6 @@ var App;
 })(App || (App = {}));
 var App;
 (function (App) {
-    var BlogPostController = (function () {
-        function BlogPostController($http, $routeParams, $location) {
-            var _this = this;
-            this.$location = $location;
-            this.toContent = "#!/blog";
-            this.id = $routeParams.id;
-            $http.get("dist/posts/posts.json").then(function (posts) {
-                posts.data.forEach(function (post) {
-                    if (post.id == _this.id)
-                        document.title = post.title + " - Alymbek Sadybakasov";
-                });
-            });
-            $http.get("dist/posts/" + this.id + ".md").then(function (result) {
-                _this.content = "dist/posts/" + _this.id + ".md";
-            });
-        }
-        return BlogPostController;
-    }());
-    App.BlogPostController = BlogPostController;
-})(App || (App = {}));
-var App;
-(function (App) {
     var MainController = (function () {
         function MainController() {
         }
@@ -141,18 +119,60 @@ var App;
     }
     App.routerConfig = routerConfig;
 })(App || (App = {}));
+/// <reference path="controllers/mainController.ts" />
+/// <reference path="controllers/navbarController.ts" />
+/// <reference path="controllers/BlogController.ts" />
+/// <reference path="index.route.ts" />
 var App;
 (function (App) {
-    var app = angular.module('personalApp', ['ngRoute', 'ngAnimate', 'btford.markdown'])
+    App.app = angular.module('personalApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'btford.markdown', 'hc.marked'])
         .controller('mainController', App.MainController)
         .controller('aboutController', App.AboutController)
         .controller('blogController', App.BlogController)
-        .directive('blogPostController', App.BlogPostController)
+        .controller('blogPostController', App.BlogPostController)
         .config(App.routerConfig);
-    app.directive("vNavbar", App.vNavbar);
-    app.run(['$rootScope', '$route', function ($rootScope, $route) {
+    App.app.directive("vNavbar", App.vNavbar);
+    App.app.run(['$rootScope', '$route', function ($rootScope, $route) {
             $rootScope.$on('$routeChangeSuccess', function () {
                 document.title = $route.current.title + " - Alymbek Sadybakasov";
+            });
+        }]);
+})(App || (App = {}));
+/// <reference path="../index.main.ts" />
+var App;
+(function (App) {
+    var BlogPostController = (function () {
+        function BlogPostController($http, $routeParams, $location) {
+            var _this = this;
+            this.toContent = "#!/blog";
+            this.id = $routeParams.id;
+            $http.get("dist/posts/posts.json").then(function (posts) {
+                posts.data.forEach(function (post) {
+                    if (post.id == _this.id) {
+                        _this.content_url = "dist/posts/" + _this.id + ".md";
+                        document.title = post.title + " - Alymbek Sadybakasov";
+                    }
+                });
+                $http.get(_this.content_url).then(function (result) {
+                    _this.content = result.data;
+                });
+            });
+        }
+        return BlogPostController;
+    }());
+    App.BlogPostController = BlogPostController;
+    App.app.config(['markedProvider', function (markedProvider) {
+            markedProvider.setOptions({
+                gfm: true,
+                tables: true,
+                highlight: function (code, lang) {
+                    if (lang) {
+                        return hljs.highlight(lang, code, true).value;
+                    }
+                    else {
+                        return hljs.highlightAuto(code).value;
+                    }
+                }
             });
         }]);
 })(App || (App = {}));
