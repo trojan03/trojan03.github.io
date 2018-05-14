@@ -15,7 +15,7 @@
   },
   {
     "id": "3",
-    "title": "Re-publishing transformed nodes in ROS",
+    "title": "Re-publishing transformed topics in ROS",
     "summary": "An example of how to re-publish existing transform topics in ROS",
     "content": "2.md",
     "date": "13.05.2018"
