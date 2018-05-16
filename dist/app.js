@@ -1,8 +1,15 @@
 var App;
 (function (App) {
     var AboutController = (function () {
-        function AboutController() {
+        function AboutController(usSpinnerService) {
+            this.usSpinnerService = usSpinnerService;
         }
+        AboutController.prototype.startSpinner = function () {
+            this.usSpinnerService.spin('image-spinner');
+        };
+        AboutController.prototype.stopSpinner = function () {
+            this.usSpinnerService.stop('image-spinner');
+        };
         return AboutController;
     }());
     App.AboutController = AboutController;
@@ -114,7 +121,7 @@ var App;
             controllerAs: 'blogPostController'
         })
             .otherwise({
-            redirectTo: '/about'
+            redirectTo: '/blog'
         });
     }
     App.routerConfig = routerConfig;
@@ -125,18 +132,42 @@ var App;
 /// <reference path="index.route.ts" />
 var App;
 (function (App) {
-    App.app = angular.module('personalApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'btford.markdown', 'hc.marked'])
+    App.app = angular.module('personalApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'hc.marked',
+        'bc.imagesloaded', 'angularSpinner'])
         .controller('mainController', App.MainController)
         .controller('aboutController', App.AboutController)
         .controller('blogController', App.BlogController)
-        .controller('blogPostController', App.BlogPostController)
         .config(App.routerConfig);
     App.app.directive("vNavbar", App.vNavbar);
     App.app.run(['$rootScope', '$route', function ($rootScope, $route) {
             $rootScope.$on('$routeChangeSuccess', function () {
                 document.title = $route.current.title + " - Alymbek Sadybakasov";
             });
+            updateImageSize();
+            linkInNewTab();
         }]);
+    function updateImageSize() {
+        marked.Renderer.prototype.image = function (href, title, text) {
+            if (title) {
+                var size = title.split('x');
+                if (size[1]) {
+                    size = 'width=' + size[0] + ' height=' + size[1];
+                }
+                else {
+                    size = 'width=' + size[0];
+                }
+            }
+            else {
+                size = '';
+            }
+            return ('<img src="' + href + '" alt="' + text + '" ' + size + '>');
+        };
+    }
+    function linkInNewTab() {
+        marked.Renderer.prototype.link = function (href, title, text) {
+            return '<a target="_blank" href="' + href + '" title="' + title + '">' + text + '</a>';
+        };
+    }
 })(App || (App = {}));
 /// <reference path="../index.main.ts" />
 var App;
@@ -161,6 +192,7 @@ var App;
         return BlogPostController;
     }());
     App.BlogPostController = BlogPostController;
+    App.app.controller('blogPostController', BlogPostController);
     App.app.config(['markedProvider', function (markedProvider) {
             markedProvider.setOptions({
                 gfm: true,

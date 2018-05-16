@@ -34,3 +34,7 @@ html, body {
   text-decoration: none;
   color: black;
 }
+
+pre {
+  background-color: #f6f8fa;
+}
