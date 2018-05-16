@@ -17,14 +17,14 @@
     "id": "3",
     "title": "Re-publishing transformed topics in ROS",
     "summary": "An example of how to re-publish existing transform topics in ROS",
-    "content": "2.md",
+    "content": "3.md",
     "date": "13.05.2018"
   },
   {
     "id": "4",
-    "title": "Setting up Intel Realsense d435 in ROS Part I",
-    "summary": "An example of how to re-publish existing transform topics in ROS",
-    "content": "2.md",
-    "date": "13.05.2018"
+    "title": "Calibrating Intel Realsense d435 with ROS and OpenCV-Python",
+    "summary": "A tutorial on how to calibrate Intel Realsense d435 using ROS packages and OpenCV-Python",
+    "content": "4.md",
+    "date": "16.05.2018"
   }
 ]
