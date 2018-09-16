@@ -133,7 +133,7 @@ var App;
 var App;
 (function (App) {
     App.app = angular.module('personalApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'hc.marked',
-        'bc.imagesloaded', 'angularSpinner'])
+        'bc.imagesloaded', 'angularSpinner', 'angulartics', 'angulartics.google.analytics'])
         .controller('mainController', App.MainController)
         .controller('aboutController', App.AboutController)
         .controller('blogController', App.BlogController)
