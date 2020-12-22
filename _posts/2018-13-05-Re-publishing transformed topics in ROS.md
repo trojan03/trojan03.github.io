@@ -1,0 +1,60 @@
+---
+layout: post
+title: Re-publishing transformed topics in ROS
+date: 2018-05-13
+description: <a href="http://wiki.ros.org/tf" target="blank">tf</a> is a package that lets the user keep track of multiple coordinate frames over time. tf maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.
+backlink: true
+---
+There are situations when we need to republish the messages from the `tf`-topic
+to a separate node. This guide provides a sample python script showing how to create a new
+node, subscribe to the `tf`-topic and republish the data to the created node.
+
+#### The code
+
+```python
+import rospy
+import tf
+from geometry_msgs.msg import Transform, Vector3, Quaternion
+
+rospy.init_node('republished_node')
+
+listener = tf.TransformListener()
+publisher = rospy.Publisher('republished_topic', Transform, queue_size=1)
+
+rate = rospy.Rate(10.0)
+while not rospy.is_shutdown():
+    try:
+        (trans,rot) = listener.lookupTransform('/topic_to_republish', '/parent_topic', rospy.Time(0))
+    except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
+        continue
+    publisher.publish(Transform(Vector3(*trans), Quaternion(*rot)))
+
+    rate.sleep()
+```
+
+#### Explanation
+
+We first initialize a new node
+
+```python
+rospy.init_node('republished_node')
+```
+
+and create a publisher to a new topic `republished_topic`
+
+```python
+listener = tf.TransformListener()
+publisher = rospy.Publisher('republished_topic', Transform, queue_size=1)
+```
+
+We take the transformation from `topic_to_republish` to `parent_topic`
+
+```python
+(trans,rot) = listener.lookupTransform('/topic_to_republish', '/parent_topic', rospy.Time(0))
+```
+
+Finally, we publish the transformation to the node `republished_node`
+
+```python
+publisher.publish(Transform(Vector3(*trans), Quaternion(*rot)))
+```

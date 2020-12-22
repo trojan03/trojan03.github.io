@@ -1,0 +1,24 @@
+---
+layout: post
+title: Source code for this site
+date: 2018-05-01
+description: Since the site is far away to be called perfect, I will update this post in case there are any significant changes in its structure or installation guides.
+backlink: true
+---
+#### Installation on github Pages/local server
+Clone repository
+```bash
+git clone https://github.com/trojan03/personal-website.git
+cd personal-website
+```
+Install bower dependencies
+```bash
+bower install
+```
+For Atom IDE, a tsconfig.json handles the compilation process. In case you want to build the site by yourself, navigate to app/src and run `tsc`. This command will generate `app/dist/app.js`.
+To deploy on github pages, push the all files from `app` except for `src`.
+For local deployment, I recommend to use [live-server](https://github.com/tapio/live-server).
+#### Structure
+I specially try to keep the site and blog as simple as possible. The site is using only the minimum number of
+angular packages.
+Blog's design structure is
