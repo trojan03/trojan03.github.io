@@ -12,6 +12,12 @@ backlink: true
 <div class="row d-flex justify-content-center">
     <img class="img-fluid rounded z-depth-1" src="/assets/img/beerpong-logo.png" alt="" title="Beer pong"/>
 </div>
+<p></p>
+<div class="row d-flex justify-content-center">
+  <video width="320" height="240" controls>
+    <source src="/assets/videos/Contextual ProMPs.mp4" type="video/mp4">
+</video>
+</div>
 <div class="row">
     <div class="col-sm mt-2 mt-md-0">
     <br>

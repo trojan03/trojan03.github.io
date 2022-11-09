@@ -15,7 +15,7 @@ backlink: true
         To achieve this target, I developed an AI developed that takes individual pictures of the hand with the help of the camera and assesses the hand's pose. The drawings are then recorded depending on the pose and passed on to the AI, which then classifies the drawings.
     </div>
     <div class="col-sm mt-2 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="/assets/img/sketch-logo.png" alt="" title="Hand Tracker"/>
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/drawing_mediapipe_gpu.gif" alt="" title="Hand Tracker"/>
     </div>
 </div>
 <div class="row">
