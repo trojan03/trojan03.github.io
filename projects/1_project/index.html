@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Alymbek  Sadybakasov | blank</title>
+<title>Alymbek  Sadybakasov | Detecting Corona Hotspots</title>
 <meta name="description" content="Alymbek Sadybakasov's personal website.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/1_project/">
 
 <!-- Theming-->
 
@@ -76,7 +76,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
               
@@ -93,7 +93,7 @@
           
           
           
-          <li class="nav-item ">
+          <li class="nav-item active">
               <a class="nav-link" href="/projects/">
                 projects
                 
@@ -125,42 +125,30 @@
 
     <div class="container mt-5">
       <div class="post">
-
-  <div class="header-bar">
-    <h1>blog</h1>
-  </div>
-
-
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Callibrating-Intel-Reasense-d435-with-Ros-and-OpenCV-Python/">Callibrating Intel Reasense d435 with Ros and OpenCV-Python</a></h3>
-        <p class="post-meta">May 16, 2018</p>
-        <p>This tutorial covers how to calibrate the Intel Realsense camera, <a href="https://click.intel.com/intelr-realsensetm-depth-camera-d435.html" target="blank">model d435</a> using ROS and OpenCV Python.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Re-publishing-transformed-topics-in-ROS/">Re-publishing transformed topics in ROS</a></h3>
-        <p class="post-meta">May 13, 2018</p>
-        <p><a href="http://wiki.ros.org/tf" target="blank">tf</a> is a package that lets the user keep track of multiple coordinate frames over time. tf maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Source-code-for-this-site/">Source code for this site</a></h3>
-        <p class="post-meta">May 1, 2018</p>
-        <p>Since the site is far away to be called perfect, I will update this post in case there are any significant changes in its structure or installation guides.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Useful-terminal-commands-for-ROS/">Useful terminal commands for ROS</a></h3>
-        <p class="post-meta">April 28, 2018</p>
-        <p>Recently, I started to work with ROS more closely as part of my master's thesis. I thought it would be useful to place in this blog post some useful terminal commands for Ubuntu.</p>
-      </li>
-    
-  </ul>
-
+  <header class="post-header">
+    <h1 class="post-title">Detecting Corona Hotspots</h1>
+    <p class="post-description">Customer: St. Peter Ording</p>
+  </header>
   
+  <a href="/projects">&#8592; back</a>
+  
+  <article>
+    <p><b>Role</b>: ML Engineer/Data Scientist</p>
 
+<p>COVID19 has caused a major impact on tourism. St. Peter Ording is a popular German seaside spa and has been looking to detecting the so called “Corona Hotspots” in order to control people flows on the beach. Traditional IoT sensors for counting people are working great at tight places but cannot work on such large areas as beach.</p>
+
+<p>To overcome this challenge, I developed a computer vision pipeline that uses cameras instead of sensors. It receives images from the cameras, processes them, counts people and sends the results back to the dashboard. The pipeline was deployed on Microsoft Azure using Azure Functions and Azure Storage. The underlying computer vision algorithm was based on PyTorch.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+    St. Peter Ording has been awarded "Publikumspreis" and second place in the <a target="_blank" rel="noopener noreferrer" href="https://www.deutschertourismuspreis.de/">"Deutscher Tourismuspreis"</a> contest.
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/spo-logo.jpg" alt="" title="St. Peter Ording" />
+    </div>
+</div>
+
+  </article>
 
 </div>
 

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Alymbek  Sadybakasov | blank</title>
+<title>Alymbek  Sadybakasov | Useful terminal commands for ROS</title>
 <meta name="description" content="Alymbek Sadybakasov's personal website.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2018/Useful-terminal-commands-for-ROS/">
 
 <!-- Theming-->
 
@@ -124,43 +124,64 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>blog</h1>
-  </div>
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Useful terminal commands for ROS</h1>
+    <p class="post-meta">April 28, 2018</p>
+  </header>
+  
+  <a href="/blog">&#8592; back</a>
+  
+  <article class="post-content">
+    <h5 id="rostopic">rostopic</h5>
+<p>Show available ROS topics</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rostopic list
+</code></pre></div></div>
+<p>Display information about a given ROS topic.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rostopic info /topic_name
+</code></pre></div></div>
+<p>Display messages published to a given ROS topic.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rostopic <span class="nb">echo</span> /topic_name
+</code></pre></div></div>
+<p>Display filtered messages published to a given ROS topic. Useful when there are different types of messages and you want to display only several of them.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rostopic <span class="nb">echo</span> <span class="nt">--filter</span> <span class="s2">"python expression"</span> /topic_name
+</code></pre></div></div>
+<p>Save the frame diagram for a given ROS topic. The frame diagram is saved to frames.pdf.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosrun rostopic_name view_frames
+evince frames.pdf
+</code></pre></div></div>
+<h5 id="rmsg">rmsg</h5>
+<p>Show additional information about a given message.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rmsg show message_name
+</code></pre></div></div>
+<h5 id="rosnode">rosnode</h5>
+<p>Show available ROS nodes</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosnode list
+</code></pre></div></div>
+<p>Show additional information about a given node.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosnode info /node_name
+</code></pre></div></div>
+<h5 id="miscellaneous">Miscellaneous</h5>
+<p>Launch Qt-based GUI.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rqt
+</code></pre></div></div>
+<p>Sometimes the plugin cannot be detected by rqt. In this case, use the following command:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rqt <span class="nt">--force-discover</span>
+</code></pre></div></div>
+<p>Launch a 3D visualization tool for ROS.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosrun rviz rviz
+</code></pre></div></div>
+<p>ROS needs to be sourced in order the commands can be run:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source </span>path_to_setup/setup.bash
+</code></pre></div></div>
+<p>This command should be typed everytime you open a new terminal. In case you want to simplify
+this process, you may want to add an alias to ~/.bashrc.</p>
 
-
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Callibrating-Intel-Reasense-d435-with-Ros-and-OpenCV-Python/">Callibrating Intel Reasense d435 with Ros and OpenCV-Python</a></h3>
-        <p class="post-meta">May 16, 2018</p>
-        <p>This tutorial covers how to calibrate the Intel Realsense camera, <a href="https://click.intel.com/intelr-realsensetm-depth-camera-d435.html" target="blank">model d435</a> using ROS and OpenCV Python.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Re-publishing-transformed-topics-in-ROS/">Re-publishing transformed topics in ROS</a></h3>
-        <p class="post-meta">May 13, 2018</p>
-        <p><a href="http://wiki.ros.org/tf" target="blank">tf</a> is a package that lets the user keep track of multiple coordinate frames over time. tf maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Source-code-for-this-site/">Source code for this site</a></h3>
-        <p class="post-meta">May 1, 2018</p>
-        <p>Since the site is far away to be called perfect, I will update this post in case there are any significant changes in its structure or installation guides.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Useful-terminal-commands-for-ROS/">Useful terminal commands for ROS</a></h3>
-        <p class="post-meta">April 28, 2018</p>
-        <p>Recently, I started to work with ROS more closely as part of my master's thesis. I thought it would be useful to place in this blog post some useful terminal commands for Ubuntu.</p>
-      </li>
-    
-  </ul>
+  </article>
 
   
-
 
 </div>
 

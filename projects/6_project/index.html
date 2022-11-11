@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Alymbek  Sadybakasov | blank</title>
+<title>Alymbek  Sadybakasov | Teaching a robot to play beer pong</title>
 <meta name="description" content="Alymbek Sadybakasov's personal website.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/6_project/">
 
 <!-- Theming-->
 
@@ -76,7 +76,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
               
@@ -93,7 +93,7 @@
           
           
           
-          <li class="nav-item ">
+          <li class="nav-item active">
               <a class="nav-link" href="/projects/">
                 projects
                 
@@ -125,42 +125,53 @@
 
     <div class="container mt-5">
       <div class="post">
-
-  <div class="header-bar">
-    <h1>blog</h1>
-  </div>
-
-
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Callibrating-Intel-Reasense-d435-with-Ros-and-OpenCV-Python/">Callibrating Intel Reasense d435 with Ros and OpenCV-Python</a></h3>
-        <p class="post-meta">May 16, 2018</p>
-        <p>This tutorial covers how to calibrate the Intel Realsense camera, <a href="https://click.intel.com/intelr-realsensetm-depth-camera-d435.html" target="blank">model d435</a> using ROS and OpenCV Python.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Re-publishing-transformed-topics-in-ROS/">Re-publishing transformed topics in ROS</a></h3>
-        <p class="post-meta">May 13, 2018</p>
-        <p><a href="http://wiki.ros.org/tf" target="blank">tf</a> is a package that lets the user keep track of multiple coordinate frames over time. tf maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Source-code-for-this-site/">Source code for this site</a></h3>
-        <p class="post-meta">May 1, 2018</p>
-        <p>Since the site is far away to be called perfect, I will update this post in case there are any significant changes in its structure or installation guides.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Useful-terminal-commands-for-ROS/">Useful terminal commands for ROS</a></h3>
-        <p class="post-meta">April 28, 2018</p>
-        <p>Recently, I started to work with ROS more closely as part of my master's thesis. I thought it would be useful to place in this blog post some useful terminal commands for Ubuntu.</p>
-      </li>
-    
-  </ul>
-
+  <header class="post-header">
+    <h1 class="post-title">Teaching a robot to play beer pong</h1>
+    <p class="post-description">University project</p>
+  </header>
   
+  <a href="/projects">&#8592; back</a>
+  
+  <article>
+    <p><b>Role</b>: Robotics&amp;Data Scientist</p>
 
+<div class="row d-flex justify-content-center">
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/beerpong-logo.png" alt="" title="Beer pong" />
+</div>
+<p></p>
+<div class="row d-flex justify-content-center">
+  <video width="320" height="240" controls="">
+    <source src="/assets/videos/Contextual ProMPs.mp4" type="video/mp4" />
+</video>
+</div>
+<div class="row">
+    <div class="col-sm mt-2 mt-md-0">
+    <br />
+        <b>Abstract: </b>Contextual Probabilistic Movement Primitives (Contextual ProMPs) extend
+
+ProMPs by adding context variables — i.e., variables that do not change dur-
+ing trajectory execution — to the state representation of a system. In this paper, we
+
+use Contextual ProMPs in the beer pong task to generalize demonstrated throwing
+
+movements to new locations of the cup. Furthermore, we compare different encod-
+ings of the context variables, i.e., position of the cup. We approximate the context
+
+by a basis expansion in the weight-space of ProMPs using classical conditioning of
+Contextual ProMPs. In addition, we put the context directly into the state vector
+using Contextual Linear Regression (CLR), which is equivalent to conditioning of
+Contextual ProMPs. Using an approximated context together with conditioning
+of Contextual ProMPs, we achieved a success rate of 70% of hits and 20% of
+nearly hits. In contrast, CLR was not that convenient in generating such successful
+throwing movements, achieving only 2 successful and 3 nearly successful hits out
+of overall 10 attempts using the same set of demonstrations. <br /><br />
+    </div>
+</div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/pdf/robopong_article.pdf">Article</a><br />
+<a target="_blank" rel="noopener noreferrer" href="/assets/pdf/robopong.pdf">Presentation</a><br />
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/trojan03/contextual-promp">Code</a></p>
+
+  </article>
 
 </div>
 

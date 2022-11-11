@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Alymbek  Sadybakasov | blank</title>
+<title>Alymbek  Sadybakasov | Source code for this site</title>
 <meta name="description" content="Alymbek Sadybakasov's personal website.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2018/Source-code-for-this-site/">
 
 <!-- Theming-->
 
@@ -124,43 +124,36 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>blog</h1>
-  </div>
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Source code for this site</h1>
+    <p class="post-meta">May 1, 2018</p>
+  </header>
+  
+  <a href="/blog">&#8592; back</a>
+  
+  <article class="post-content">
+    <h4 id="installation-on-github-pageslocal-server">Installation on github Pages/local server</h4>
+<p>Clone repository</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/trojan03/personal-website.git
+<span class="nb">cd </span>personal-website
+</code></pre></div></div>
+<p>Install bower dependencies</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bower <span class="nb">install</span>
+</code></pre></div></div>
+<p>For Atom IDE, a tsconfig.json handles the compilation process. In case you want to build the site by yourself, navigate to app/src and run <code class="language-plaintext highlighter-rouge">tsc</code>. This command will generate <code class="language-plaintext highlighter-rouge">app/dist/app.js</code>.
+To deploy on github pages, push the all files from <code class="language-plaintext highlighter-rouge">app</code> except for <code class="language-plaintext highlighter-rouge">src</code>.
+For local deployment, I recommend to use <a href="https://github.com/tapio/live-server">live-server</a>.</p>
+<h4 id="structure">Structure</h4>
+<p>I specially try to keep the site and blog as simple as possible. The site is using only the minimum number of
+angular packages.
+Blog’s design structure is</p>
 
-
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Callibrating-Intel-Reasense-d435-with-Ros-and-OpenCV-Python/">Callibrating Intel Reasense d435 with Ros and OpenCV-Python</a></h3>
-        <p class="post-meta">May 16, 2018</p>
-        <p>This tutorial covers how to calibrate the Intel Realsense camera, <a href="https://click.intel.com/intelr-realsensetm-depth-camera-d435.html" target="blank">model d435</a> using ROS and OpenCV Python.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Re-publishing-transformed-topics-in-ROS/">Re-publishing transformed topics in ROS</a></h3>
-        <p class="post-meta">May 13, 2018</p>
-        <p><a href="http://wiki.ros.org/tf" target="blank">tf</a> is a package that lets the user keep track of multiple coordinate frames over time. tf maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Source-code-for-this-site/">Source code for this site</a></h3>
-        <p class="post-meta">May 1, 2018</p>
-        <p>Since the site is far away to be called perfect, I will update this post in case there are any significant changes in its structure or installation guides.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Useful-terminal-commands-for-ROS/">Useful terminal commands for ROS</a></h3>
-        <p class="post-meta">April 28, 2018</p>
-        <p>Recently, I started to work with ROS more closely as part of my master's thesis. I thought it would be useful to place in this blog post some useful terminal commands for Ubuntu.</p>
-      </li>
-    
-  </ul>
+  </article>
 
   
-
 
 </div>
 

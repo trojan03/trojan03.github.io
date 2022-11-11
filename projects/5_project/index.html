@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Alymbek  Sadybakasov | blank</title>
+<title>Alymbek  Sadybakasov | Learning tactile skills with FingerVision</title>
 <meta name="description" content="Alymbek Sadybakasov's personal website.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/5_project/">
 
 <!-- Theming-->
 
@@ -76,7 +76,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
               
@@ -93,7 +93,7 @@
           
           
           
-          <li class="nav-item ">
+          <li class="nav-item active">
               <a class="nav-link" href="/projects/">
                 projects
                 
@@ -125,42 +125,48 @@
 
     <div class="container mt-5">
       <div class="post">
-
-  <div class="header-bar">
-    <h1>blog</h1>
-  </div>
-
-
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Callibrating-Intel-Reasense-d435-with-Ros-and-OpenCV-Python/">Callibrating Intel Reasense d435 with Ros and OpenCV-Python</a></h3>
-        <p class="post-meta">May 16, 2018</p>
-        <p>This tutorial covers how to calibrate the Intel Realsense camera, <a href="https://click.intel.com/intelr-realsensetm-depth-camera-d435.html" target="blank">model d435</a> using ROS and OpenCV Python.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Re-publishing-transformed-topics-in-ROS/">Re-publishing transformed topics in ROS</a></h3>
-        <p class="post-meta">May 13, 2018</p>
-        <p><a href="http://wiki.ros.org/tf" target="blank">tf</a> is a package that lets the user keep track of multiple coordinate frames over time. tf maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Source-code-for-this-site/">Source code for this site</a></h3>
-        <p class="post-meta">May 1, 2018</p>
-        <p>Since the site is far away to be called perfect, I will update this post in case there are any significant changes in its structure or installation guides.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/Useful-terminal-commands-for-ROS/">Useful terminal commands for ROS</a></h3>
-        <p class="post-meta">April 28, 2018</p>
-        <p>Recently, I started to work with ROS more closely as part of my master's thesis. I thought it would be useful to place in this blog post some useful terminal commands for Ubuntu.</p>
-      </li>
-    
-  </ul>
-
+  <header class="post-header">
+    <h1 class="post-title">Learning tactile skills with FingerVision</h1>
+    <p class="post-description">Master's thesis</p>
+  </header>
   
+  <a href="/projects">&#8592; back</a>
+  
+  <article>
+    <p><b>Role</b>: Robotics&amp;Data Scientist</p>
+<div class="row d-flex justify-content-center">
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/masters-logo.png" alt="" title="Master's thesis" />
+</div>
+<p></p>
+<div class="row d-flex justify-content-center">
+  <video width="320" height="240" controls="">
+    <source src="/assets/videos/humanoids.mp4" type="video/mp4" />
+  </video>
+</div>
+<div class="row">
+    <div class="col-sm mt-2 mt-md-0">
+    <br />
+        <b>Abstract: </b>Assembly tasks require rich feedback that enables tracking and adjustment of task execution parameters to unforeseen
+        changes in the environment. Due to recent breakthroughs in computer vision, many architectural systems use video and
+        depth cameras to guide assembly through sensory feedback. However, visual feedback alone is insufficient for performing
+        manipulation tasks that crucially depend on contact with external objects and require force estimation at contact points.
+        Although conventional force-torque sensors can be used to extend robot capabilities in this direction, they tend to be
+        expensive. <br /><br />
+        In this thesis, we investigate the feasibility of employing an inexpensive vision-based alternative in closed-loop control
+        scenarios – a variant of the FingerVision sensor that leverages the advances in computer vision to compensate for the
+        lack of problem-specific hardware. We develop and evaluate a range of feedback controllers that use various modalities
+        provided by the FingerVision sensor as input. In particular, by combining tactile feedback with real-time gripper and robot
+        control algorithms, we demonstrate grasp adaptation, object shape and texture estimation, slip and contact detection,
+        force and torque estimation. Furthermore, we show that the data delivered by the sensor is of sufficient quality to enable
+        learning of auxiliary tactile skills – mapping directly from contact sensations to the force applied at an object in contact
+        and to the viscosity and granularity of a substance being stirred by means of a spoon. Finally, the proposed tactile
+        feedback controllers and learned skills are combined together to demonstrate applicability and utility of tactile sensing
+        in collaborative human-robot architectural assembly tasks <br /><br />
+    </div>
+</div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/pdf/alymbek_thesis.pdf">Link to thesis</a></p>
 
+  </article>
 
 </div>
 
